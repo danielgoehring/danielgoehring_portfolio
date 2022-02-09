@@ -120,8 +120,8 @@ hr {
 }
 
 .menu-wrap .toggler:checked + .hamburger > div {
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .menu-wrap .toggler:checked + .hamburger > div:before,
@@ -132,8 +132,8 @@ hr {
 }
 
 .menu-wrap .toggler:checked:hover + .hamburger > div {
-  -webkit-transform: rotate(225deg);
-          transform: rotate(225deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .menu-wrap .toggler:checked ~ .menu {
@@ -538,6 +538,11 @@ img {
 
 .btns {
   margin-top: 15px;
+}
+
+.btns a {
+  text-decoration: none;
+  color: black;
 }
 
 .pbtns {
