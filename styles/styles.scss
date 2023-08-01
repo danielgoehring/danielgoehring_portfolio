@@ -12,6 +12,38 @@ $primary-color: rgba(0, 0, 255, 0.548);
 $overlay-color: rgba(24, 39, 51, 0.85);
 $menu-speed: 0.75s;
 
+@keyframes slideInFromRight {
+    from {
+      transform: translateX(15%); /* Start from the right of the container */
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0); /* End at the original position */
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromleft {
+    from {
+      transform: translateX(-15%); /* Start from the right of the container */
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0); /* End at the original position */
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(15%); /* Start from the right of the container */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0); /* End at the original position */
+      opacity: 1;
+    }
+  }
 
 
 
@@ -38,7 +70,7 @@ body {
 }
 
 h1 {
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
 
 h3 {
@@ -68,6 +100,159 @@ hr {
     
 }
 
+// .c2 {
+//     display: flex;
+//     flex-direction: column;
+//     // justify-content: center;
+//     align-items: center;
+// }
+
+// .pbtns {
+//     padding: .8rem;
+//     margin-right: 10px;
+//     background-color: white;
+//     border: 2px solid $overlay-color;
+//     border-radius: 5px;
+// }
+
+// .projectsContainer {
+//     display: flex;
+//     align-items: flex-start;
+//     margin: 0 34em;
+//     margin-bottom: 80px;
+// }
+
+// .projectsContainer p {
+//     flex: 1;
+//     margin-right: 40px;
+//     font-size: 18px;
+//     margin-top: 10px;
+// }
+
+// .projectsContainer img {
+//     width: 600px;
+//     height: 340px;
+    
+// }
+
+// .imgContainer {
+//     flex: 0;
+
+// }
+
+// .projectDiv {
+//     text-align: left;
+    
+//     animation: slideInFromleft 2s ease-out;
+    
+// }
+
+// .projectDiv h3 {
+//     font-size: 26px;
+//     font-weight: bold;
+// }
+
+.c2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.pbtns {
+    display: inline-block;
+    padding: .8rem;
+    margin-right: 10px;
+    background-color: white;
+    border: 2px solid $overlay-color;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.pbtns:hover {
+    transform: translate(5px, 5px);
+    
+  }
+
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+
+.projectsContainer p {
+    flex: 1;
+    margin-right: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.projectsContainer img {
+    width: 100%;
+    max-width: 600px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.imgContainer {
+    width: 100%;
+    text-align: center; /* To center the image if needed */
+  }
+
+  .imgContainer img {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* You can set a maximum width if needed */
+  }
+
+.projectDiv {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 40px;
+    animation: slideInFromleft 1s ease-out;
+  }
+
+.projectDiv h3 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Tablet and small desktop styling */
+@media screen and (min-width: 768px) {
+    .projectsContainer {
+      flex-direction: row;
+      justify-content: center; /* Center align the content */
+      max-width: 1200px; /* Set a max width for the container */
+      margin: 0 auto; /* Center the container itself */
+    }
+  
+    .projectDiv, .imgContainer {
+      width: 45%;
+    }
+  
+    .projectDiv {
+      margin-right: 5%; /* Add some spacing between projectDiv and imgContainer */
+    }
+  }
+  
+ /* Larger desktop styling */
+@media screen and (min-width: 1024px) {
+    .projectDiv, .imgContainer {
+      width: 40%;
+    }
+  
+    .projectDiv {
+      padding: 2em;
+      margin-right: 5%;
+    }
+  
+    .imgContainer img {
+      max-width: 600px; /* You can adjust this as needed */
+    }
+
+  }
+
+
 .ct {
     margin-top: 40px;
 }
@@ -79,6 +264,9 @@ hr {
     z-index: 1;
 }
 
+.imgShadow {
+    box-shadow: 1px 3px 8px 3px rgba(0, 0, 0, 0.05);
+}
 
 .menu-wrap .toggler {
     position: absolute;
@@ -287,27 +475,35 @@ hr {
 }
 
 .section-headings {
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .section-headings2 {
     color: white;
-    font-size: 24px;
+    font-size: 32px;
+}
+
+h3 {
+    letter-spacing: none;
 }
 
 .heading {
     margin-bottom: 10px;
+    animation: slideInFromleft 2s ease-out;
 }
 
 .heading-container2 {
     color: black;
     padding: 2em;
     text-align: center;
+    margin-bottom: 40px;
     
  }
 
 .see-proj-btn {
     margin-top: 12px;
+    animation: slideInFromBottom 2s ease-out;
 }
 
 #spb {
@@ -320,131 +516,131 @@ hr {
 
 //Card flip--------------------
 
-.flip-card {
-    background-color: transparent;
-    width: 320px;
-    height: 380px;
-    perspective: 1000px;
-    margin-bottom: 2em;
-    margin-right: 1em;
-    margin-left: 1em;
+// .flip-card {
+//     background-color: transparent;
+//     width: 320px;
+//     height: 380px;
+//     perspective: 1000px;
+//     margin-bottom: 2em;
+//     margin-right: 1em;
+//     margin-left: 1em;
     
-  }
+//   }
 
-  .flip-card-front img {
-    height: 300px;
-    width: 290px;
-    padding: 0.5em;
-  }
+//   .flip-card-front img {
+//     height: 300px;
+//     width: 290px;
+//     padding: 0.5em;
+//   }
   
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   .flip-card-inner {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     text-align: center;
+//     transition: transform 0.6s;
+//     transform-style: preserve-3d;
+//     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     
     
-  }
+//   }
 
-  .flip-card p,
-  .flip-card .btns {
-      padding: 2em;
-      padding-bottom: 1em;
+//   .flip-card p,
+//   .flip-card .btns {
+//       padding: 2em;
+//       padding-bottom: 1em;
       
       
-  }
+//   }
 
-  .flip-card p {
-    color: white;
-    text-align: center;
-    font-size: 18px;
-  }
+//   .flip-card p {
+//     color: white;
+//     text-align: center;
+//     font-size: 18px;
+//   }
 
-  .flip-card .btns {
-      padding-top: 0;
-      font-size: 14px;
+//   .flip-card .btns {
+//       padding-top: 0;
+//       font-size: 14px;
       
-  }
+//   }
   
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
+//   .flip-card:hover .flip-card-inner {
+//     transform: rotateY(180deg);
+//   }
   
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+//   .flip-card-front, .flip-card-back {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     -webkit-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//   }
   
-  .flip-card-front {
-    background-color: white;
-    color: black;
-  }
+//   .flip-card-front {
+//     background-color: white;
+//     color: black;
+//   }
   
-  .flip-card-back {
-    background-image: linear-gradient(to right bottom, #eca026, rgba(185, 19, 19, 0.911));
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back {
+//     background-image: linear-gradient(to right bottom, #eca026, rgba(185, 19, 19, 0.911));
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  .flip-card-back02 {
-    background-image: linear-gradient(to right bottom, #44b2e6, #05044d);
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back02 {
+//     background-image: linear-gradient(to right bottom, #44b2e6, #05044d);
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  .flip-card-back03 {
-    background-image: linear-gradient(to right bottom, #838383, #2e2e2e);
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back03 {
+//     background-image: linear-gradient(to right bottom, #838383, #2e2e2e);
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  .flip-card-back04 {
-    background-image: linear-gradient(to right bottom, #6b330e, #978f1c);
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back04 {
+//     background-image: linear-gradient(to right bottom, #6b330e, #978f1c);
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  .flip-card-back05 {
-    background-image: linear-gradient(to right bottom, #9c1283, #aa2b15);
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back05 {
+//     background-image: linear-gradient(to right bottom, #9c1283, #aa2b15);
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  .flip-card-back06 {
-    background-image: linear-gradient(to right bottom, #396b2a, #1b2e21);
-    color: black;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .flip-card-back06 {
+//     background-image: linear-gradient(to right bottom, #396b2a, #1b2e21);
+//     color: black;
+//     transform: rotateY(180deg);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
 //------------------------------
 
@@ -472,7 +668,8 @@ img {
     margin-bottom: 15px;
     margin-top: 10px;
     text-align: center;
-    // padding-right: 16.8px;
+    transition: all 0.3s ease;  
+    animation: slideInFromRight 1s ease-out;
 }
 
 .project img {
@@ -485,23 +682,17 @@ img {
 }
 
 .btns {
-    margin-top: 15px;
-    
+    margin-top: 40px;
+    text-align: left;
 }
 
 .btns a {
     text-decoration: none;
     color: black;
+    
 }
 
-.pbtns {
-    padding: .8rem;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: white;
-    border: none;
-    border-radius: 4rem;
-}
+
 
 //---------------------
 
@@ -509,6 +700,7 @@ img {
 
 
 .aboutText {
+    font-size: 18px;
     text-align: center;
     padding: 0 4em;
 }
@@ -678,6 +870,13 @@ p {
   transform: translateY(-0.25em);
   transition: transform .2s;
 }
+
+.btns a:hover,
+.btns a:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  transition: transform .2s;
+} 
 
 .co {
     font-size: 12px;
@@ -871,7 +1070,7 @@ p {
         
                 .aboutText {
                     text-align: center;
-                    padding: 0 44em;
+                    padding: 0 38em;
                 }
                 
                 }
