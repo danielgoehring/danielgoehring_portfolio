@@ -41,3 +41,9 @@ You can view the live website [here](https://danielgoehring.com/).
 
    ```bash
    git clone https://github.com/your-username/your-portfolio-website.git
+
+## Contact
+
+If you have any questions, suggestions, or would like to get in touch, you can reach me at:
+
+Email: danielgoehring73@gmail.com
