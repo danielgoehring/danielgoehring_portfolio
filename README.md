@@ -1,6 +1,6 @@
 # danielgoehring_portfolio
 
-Welcome to my portfolio website repository! This website showcases my personal projects, skills, and provides a way to get in touch with me.
+This website showcases my personal projects, skills, and provides a way to get in touch with me.
 
 ## Table of Contents
 
